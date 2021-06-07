@@ -12,3 +12,9 @@ jobs:
 
     - name: all entries made
       run: bash ./.github/workflows/check-complete.sh
+      on: [push, pull_request]
+          
+    - name: Testcases
+      run: python BMS_test.py
+
+    - name: all entries made
