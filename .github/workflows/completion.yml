@@ -15,6 +15,6 @@ jobs:
       on: [push, pull_request]
           
     - name: Testcases
-      run: python BMS_test.py
+      run: python sensor_data_sender_sender_test.py
 
     - name: all entries made
