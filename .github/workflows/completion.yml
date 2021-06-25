@@ -1,14 +1,21 @@
-name: Check Completeness
+name: Build and Run
 
-on: [push, pull_request]
+
+on:
+  push:
+    paths-ignore:
+    - '**.md'
+  pull_request:
+    paths-ignore:
+    - '**.md'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: all entries made
-      run: bash ./.github/workflows/check-complete.sh
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      - run: python bm_reading_test.py 
