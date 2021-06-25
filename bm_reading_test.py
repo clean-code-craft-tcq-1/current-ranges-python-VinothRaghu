@@ -20,7 +20,5 @@ class test_battery_management_continous_current_reading(unittest.TestCase):
 
   def test_wrong_current_ranges(self):
     self.assertTrue(bms_reading.current_ranges([3,4,5,6,7,8]) == "Wrong Input")    #There is no constant range
-    
-
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
